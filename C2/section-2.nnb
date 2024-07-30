@@ -1,0 +1,185 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Expression Vs. Statement\r\n\r\nFrankly talking any *Statement* that results in a single value is an expression, like arithmatic operations, functions that return values, RegEx, etc. On the other hand a statement corresponds to full sentence that may also contain expressions, in JS code that ends with semicolon is statement."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Statement\r\ntrue;\r\n!false;\r\nArray.forEach();\r\n\r\n// Expressions\r\nArray.map() // returns an array that is an expression\r\n(2 + 3) / 15 - 1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "TIP: Section 2 is too easy to explain let's do the exercises"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function PrintShi(times) {\r\n  let string = \"#\";\r\n  for (let i = 0; i < times; i++) {\r\n    console.log(string);\r\n    string += \"#\"\r\n  }\r\n}\r\n\r\nPrintShi(7)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "#",
+                                "##",
+                                "###",
+                                "####",
+                                "#####",
+                                "######",
+                                "#######",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// This is refactored version\r\nfunction PrintShi2(times) {\r\n  for (let str = \"#\"; str.length <= times; str += \"#\") console.log(str);\r\n}\r\n\r\nPrintShi2(5)\r\n\r\n// This is the actual answer of the book, it's much better than my jargon"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "#",
+                                "##",
+                                "###",
+                                "####",
+                                "#####",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function FizzBuzz(number) {\r\n  for (let i = 1; i <= number; i++) {\r\n    if (i % 3 === 0 && i % 5 === 0) console.log(\"FizzBuzz\");\r\n    else if (i % 3 === 0) console.log(\"Fizz\");\r\n    else if (i % 5 === 0) console.log(\"Buzz\");\r\n  }\r\n}\r\n\r\nFizzBuzz(15);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Fizz",
+                                "Buzz",
+                                "Fizz",
+                                "Fizz",
+                                "Buzz",
+                                "Fizz",
+                                "FizzBuzz",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Main solution\r\n\r\nfunction FizzBuzzPro(n) {\r\n  for (let i = 1; i <= n; i++) {\r\n    let output = \"\";\r\n    if (i % 3 == 0) output += \"Fizz\";\r\n    if (i % 5 == 0) output += \"Buzz\";\r\n    console.log(output || i);\r\n  }\r\n}\r\n\r\nFizzBuzzPro(15)\r\n\r\n// Again this Marijn cought me ungaurd the amout of simplicity and innovation he puts in the code is fabulous"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "8",
+                                "Fizz",
+                                "Buzz",
+                                "11",
+                                "Fizz",
+                                "13",
+                                "14",
+                                "FizzBuzz",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function ChessBoard(width, height) {\r\n  let whiteRow = \" #\".repeat(width / 2);\r\n  let blackRow = \"# \".repeat(width / 2);\r\n\r\n  let output = \"\";\r\n  for (let i = 1; i <= height / 2; i++) {\r\n    output += whiteRow + \"\\n\" + blackRow + \"\\n\";\r\n  }\r\n\r\n  return output;\r\n}\r\n\r\nconsole.log(ChessBoard(8, 8));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                "",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// This solution provided by Marijn indeed is more complex than mine but it's used with the most basic statements Vs.\r\n// mine that is used with more advance code like array methods, this time I won I think! \r\nfunction ChessBoard2(size) {\r\n  let board = \"\";\r\n\r\n  for (let y = 0; y < size; y++) {\r\n    for (let x = 0; x < size; x++) {\r\n      if ((x + y) % 2 == 0) {\r\n        board += \" \";\r\n      } else {\r\n        board += \"#\";\r\n      }\r\n    }\r\n    board += \"\\n\";\r\n  }\r\n\r\n  console.log(board);\r\n}\r\n\r\nChessBoard2(8)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                " # # # #",
+                                "# # # # ",
+                                "",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
