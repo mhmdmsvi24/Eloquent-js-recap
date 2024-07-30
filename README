@@ -1,6 +1,6 @@
 # Eloquent JavaScript Handbook
 
-Welcome to the Eloquent JavaScript Handbook repository! This repository is dedicated to providing a comprehensive guide, including tips, tricks, exercises, projects, and additional resources, to enhance your learning experience with the book _Eloquent JavaScript_.
+Welcome to the Eloquent JavaScript Handbook (4th Edition) repository! This repository is dedicated to providing a comprehensive guide, including tips, tricks, exercises, projects, and additional resources, to enhance your learning experience with the book _Eloquent JavaScript_.
 
 ## Table of Contents
 
@@ -11,6 +11,8 @@ Welcome to the Eloquent JavaScript Handbook repository! This repository is dedic
   - [Exercises](#exercises)
   - [Projects](#projects)
   - [Extras](#extras)
+  - [prerequisites](#prerequisites)
+  - [Motivation](#motivation)
 
 ## Overview
 
@@ -36,4 +38,21 @@ Here you'll find a series of projects designed to apply the concepts learned in 
 
 Explore additional resources and materials that complement the book. This section includes links to articles, videos, and other books that can further enhance your JavaScript knowledge.
 
-Happy coding!
+## prerequisites
+
+1. Node.js Jupyter Notebook (if you want to run _.nnb_ files otherwise you can use other editors)
+
+TIP: You can skip this section as it just contains some beautiful texts and jargon worth reading
+
+## Motivation
+
+Besides explaining JavaScript, I will introduce the basic principles of programming. Programming, it turns out, is hard. The fundamental rules are simple and clear, but programs built on top of these rules tend to become complex enough to introduce their own rules and complexity. You’re building your own maze, in a way, and you might just get lost in it.
+
+if you ever wonder why you'r in an infinite loop of **tutorial hell**, I have an idea for you it's just easy set of rules that you must obey to be part of top-notch programmers:
+
+1. Delete Social Media that wastes your time (except Linkedin that will help you a lot)
+2. Never watch online tutorial videos specially long ones that consume a lot of time, it's boring and useless, start reading book from scratch like if you want to start JS Eloquent Js and other book will be a rocket ride for you and your knowledge, social media lets idiot people talk and the worth part of it that let them make money, unprofessional people create dumb content and they will wast hell amount of resources from you, just read as many books as you can.
+3. Always try to code on your own pace don't use online tutorials to find your answers, belive me it's trash instead try to search and find your result in docs and other part of the web the harder you find your answer the stronger you'll be.
+4. Projects are the key to heaven, create as many projects as you can even if they are dumb push them to your github, belive me you learn a lot by making mistake or frankly talking you learn nothing if you don't make mistakes, it's part of our nature
+
+> When action grows unprofitable, gather information; when information grows unprofitable, sleep. -Ursula K. Le Guin, The Left Hand of Darkness

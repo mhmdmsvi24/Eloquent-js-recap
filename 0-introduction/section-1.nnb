@@ -1,0 +1,65 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "> “Below the surface of the machine, the program moves. Without effort, it expands and contracts. In great harmony, electrons scatter and regroup. The forms on the monitor are but ripples on the water. The essence stays invisibly below.” —Master Yuan-Ma, The Book of Programming"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Bit's and Values\r\nIn the computer’s world, there is only *data*, You can read data, modify data, create new data—but that which isn’t data cannot be mentioned. All this data is stored as long sequences of bits and is thus fundamentally alike.\r\n\r\nTo be able to work with bits of data in computers without having them lost we need *Values*, chunks of information that that represent piece of information, information can be in many forms, Numbers, Strings, Functions, Objects and many more.\r\n\r\nTo access a piece of information you must merly call it's name, in programming world we declare them as Variables that\r\nmeant to act as a container for that information wrapped into a box, called with a name."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Atomic values\r\n\r\n1. Numbers: numeric values that can be stored upto 64 bits, similarly upto 2^64 Decimals, any number more than that results in *overflow* that screws all over the program.\r\n\r\n  - we have two type of numeric values: Integer and Floats in JS, the main thing to do with numbers is Arithmatic operations (+, -, *, /, **)\r\n\r\n  - Special Numbers: NaN, Infinity, -Infinity\r\n  \r\n2. Strings: represented using single quotes, double quotes, back ticks\r\n3. Booleans: true, false\r\n4. Empty values: undefined, null\r\n5. BigInt and Symbols (Advance)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Short Circuiting: return the first truthy value that it encounter (type coercion applied)\r\n\r\nfunction SC(val1, val2) {\r\n  return val1 || val2;\r\n}\r\n\r\nconsole.log(\r\n  SC(\"\", 2)\r\n) // 2 as \"\" coerces to false"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Nullish Coalescing, proviedes a way to handle null and undefiend values\r\n\r\nfunction NC(val1, val2) {\r\n  return val1 ?? val2;\r\n}\r\n\r\nconsole.log(\r\n  NC(undefined, 3)\r\n)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
