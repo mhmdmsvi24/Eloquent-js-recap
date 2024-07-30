@@ -1,0 +1,39 @@
+# Eloquent JavaScript Handbook
+
+Welcome to the Eloquent JavaScript Handbook repository! This repository is dedicated to providing a comprehensive guide, including tips, tricks, exercises, projects, and additional resources, to enhance your learning experience with the book _Eloquent JavaScript_.
+
+## Table of Contents
+
+- [Eloquent JavaScript Handbook](#eloquent-javascript-handbook)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Tips and Tricks](#tips-and-tricks)
+  - [Exercises](#exercises)
+  - [Projects](#projects)
+  - [Extras](#extras)
+
+## Overview
+
+This repository serves as a companion to the book _Eloquent JavaScript_. It includes a variety of resources to help you better understand and apply the concepts covered in the book. Whether you're a beginner or an experienced developer, you'll find valuable insights and practical exercises here.
+
+## Tips and Tricks
+
+In this section, you'll find a collection of useful tips and tricks to help you write more efficient and effective JavaScript code. These tips are derived from the book and my own experience.
+
+## Exercises
+
+Practice makes perfect! This section contains exercises from the book, along with additional exercises I've created to further challenge your understanding. Each exercise includes a detailed solution to help you learn from your mistakes.
+
+## Projects
+
+Here you'll find a series of projects designed to apply the concepts learned in _Eloquent JavaScript_. Each project includes a description, requirements, and a link to the project files. These projects will help you build a solid portfolio of work.
+
+- [Project 1: Title](#)
+- [Project 2: Title](#)
+- [Project 3: Title](#)
+
+## Extras
+
+Explore additional resources and materials that complement the book. This section includes links to articles, videos, and other books that can further enhance your JavaScript knowledge.
+
+Happy coding!
