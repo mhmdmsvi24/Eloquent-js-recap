@@ -1,0 +1,65 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Data Structures Objects and Arrays\r\n\r\nObjects and Arrays are yet another data type in JS that is more than an atom their are probably molcules like functions that may created using multiple atoms (Primitives: strings, numbers, booleans)\r\n\r\nJS data types spilt into two categories, Primitives and References (Object)\r\n\r\n1. Primitives\r\n   - Integers\r\n   - Strings\r\n   - Booleans\r\n   - null\r\n   - undefined\r\n   - Symbols\r\n   - BigInt\r\n2. References\r\n   - Arrays\r\n   - Objects\r\n   - Functions\r\n\r\nPrimitives are data types that does not come with any property or method you may ask then how it comes that we can still implement couple of methods on them (like length prop on strings or etc.)\r\n\r\nJS introduce a concept called *Boxing* that wrap the Primitive types with the respected object and then after performing the method the *unboxing* happend, so when we declare `str.length` the primitive type will be wrapped by it's constructor object `String` that will let us perform accessing props and methods.\r\n\r\nEverything else is *Reference* or *Object* in JS, Reference types comes with props and methods and other handful features"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Arrays\r\n\r\nArrays in JS are kind of *Stack* like data structures that may introduce the same concept and features, if you have a prior knowledge of how Arrays works in JS you'll catch up with *Stack* easily.\r\n\r\nStack serve as a collection of elements that supports couple of operations (props and methods) on them, if you want an image of it imagine a stack of plates on top of each other in a resturant that you can access the plates by removing the top most plate (otherwise the may fall and break right?) you can also stack up other plates on other the current stack by adding plates one by one on the top most one.\r\n\r\nYou may also come to the *Stack* in Js engine (Stack and Heap) it's also the same, the operations (mostly methods) are only availabe as *LIFO* (last in first out) like the resturant plates there's no other way, these type of stacks are refered as *Hardware Stack* that used in the basic architecture of hardwares and softwares.\r\n\r\n1. Methods:\r\n   - Push: which pushes a new item on top of our stack\r\n   - Pop: which pops out the most recent elemnt from the stack\r\n   - Peek: returnes the most recent elemnt added to the stack\r\n   - Pick: returnes the specific element using zero indexed values\r\n2. Props:\r\n   - Size: return the number of items in the stack\r\n\r\nTo Implement a Stack you need two type of data structure, *Stack* and *Linked List* with these two DS's you can implement a simle *Hardware Stack*, if you want an easier version you can use *Software Version* that replaces linked list with as simple array `let arr = []`."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "class Stack {\r\n  constructor(items = []) { // some extra salt to prevent errors and other stuff\r\n    this.vault = [...items];\r\n  }\r\n\r\n  get size() {\r\n    return this.vault.length;\r\n  } // O(1)\r\n\r\n  get list() {\r\n    return [...this.vault]; // Return a copy to prevent direct manipulation\r\n  } // O(n)\r\n\r\n  get peek() {\r\n    if (this.size === 0) {\r\n      throw new Error(\"Stack is empty\");\r\n    }\r\n    return this.vault[this.size - 1];\r\n  } // O(1)\r\n\r\n  get pick() {\r\n    return (i) => {\r\n      if (i < 0 || i >= this.size) {\r\n        throw new Error(\"Index out of bounds\");\r\n      }\r\n      return this.vault[i];\r\n    }\r\n  } // O(1)\r\n\r\n  push(item) {\r\n    this.vault[this.size] = item; // Manually add item to the stack\r\n    return this.size;\r\n  } // O(1)\r\n\r\n  pop() {\r\n    if (this.size === 0) {\r\n      throw new Error(\"Stack is empty\");\r\n    }\r\n    const item = this.vault[this.size - 1];\r\n    this.vault.length = this.size - 1; // Manually remove the last item\r\n    return item;\r\n  } // O(1)\r\n}\r\n// if you are just curous to implement shift and unshift methods, just for extra info remember \r\n// their time complexity is O(n)\r\n\r\nconst myStack = new Stack([1, 2, 3]);\r\nconsole.log(myStack.push(4), myStack.pop(), myStack.list, myStack.peek);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "4 4 [ 1, 2, 3 ] 3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "TIP: just to remind you a small tip, getters are just props but methods are functions\r\n\r\nthat's quiet some information in previous lesson for you that's *Arrays under the hood*.\r\n\r\nlet's dig into *objects*:\r\n\r\nObjects are unordered list of data structures that serve their own purpse they are keep kind of *key value* pairs, you may come to *Hash Tables* in your coding life, Objects in JS are the same as *maps* in Python or Golang\r\n\r\nThe most usefull operations that can be done on hash tables is:\r\n  1. Unary `delete` operator\r\n  2. Binary `in` operator\r\n  3. `Object.keys(obj)` => Object keys\r\n  4. `Object.values(obj)` => Object values\r\n  5. `Object.assign(obj)` => returns a shallow copy"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// a simple object in JS\r\n\r\nconst johnDoe = {\r\n  // props\r\n  fname: \"John\",\r\n  lname: \"Doe\",\r\n  id: 7,\r\n  born: 1975,\r\n\r\n  // seters and getter are accessor props in JS that will be introduced latter\r\n  get age() {\r\n    return (new Date()).getFullYear() - this.born;\r\n  }, // getter\r\n  set age(born) {\r\n    this.born = born;\r\n  }, // setter\r\n  fullname: function() {\r\n    return this.fname + \" \" + this.lname;\r\n  } // methods\r\n}\r\n\r\nconsole.log(\r\n  johnDoe.age = 1970,\r\n  johnDoe.age,\r\n  johnDoe.fullname(),\r\n  \"fname\" in johnDoe,\r\n  delete johnDoe[\"birth\"]\r\n);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1970 54 John Doe true true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
